@@ -1,5 +1,5 @@
 =begin
-#phishingapi
+#spamapi
 
 #Easily and directly scan and block phishing security threats.
 
@@ -33,10 +33,22 @@ describe 'SpamDetectionApi' do
   end
 
   # unit tests for spam_detect_text_string_advanced_post
+  # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
   # @param [Hash] opts the optional parameters
-  # @option opts [SpamDetectionAdvancedRequest] :body 
+  # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
   # @return [SpamDetectionAdvancedResponse]
   describe 'spam_detect_text_string_advanced_post test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for spam_detect_text_string_post
+  # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+  # @param [Hash] opts the optional parameters
+  # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
+  # @return [SpamDetectionResponse]
+  describe 'spam_detect_text_string_post test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

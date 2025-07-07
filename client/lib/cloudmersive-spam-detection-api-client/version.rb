@@ -1,5 +1,5 @@
 =begin
-#phishingapi
+#spamapi
 
 #Easily and directly scan and block phishing security threats.
 
@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.14
 =end
 
 module CloudmersiveSpamDetectionApiClient
-  VERSION = '2.2.0'
+  VERSION = '2.2.1'
 end

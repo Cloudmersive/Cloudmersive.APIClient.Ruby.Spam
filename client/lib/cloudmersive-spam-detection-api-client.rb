@@ -1,5 +1,5 @@
 =begin
-#phishingapi
+#spamapi
 
 #Easily and directly scan and block phishing security threats.
 
@@ -19,6 +19,7 @@ require 'cloudmersive-spam-detection-api-client/configuration'
 # Models
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_advanced_request'
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_advanced_response'
+require 'cloudmersive-spam-detection-api-client/models/spam_detection_response'
 
 # APIs
 require 'cloudmersive-spam-detection-api-client/api/spam_detection_api'

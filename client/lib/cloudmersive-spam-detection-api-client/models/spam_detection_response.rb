@@ -13,22 +13,22 @@ Swagger Codegen version: 2.4.14
 require 'date'
 
 module CloudmersiveSpamDetectionApiClient
-  # AI advanced spam detection request
-  class SpamDetectionAdvancedRequest
-    # Input text string to detect spam against
-    attr_accessor :input_string
+  # Result of detecting spam using AI
+  class SpamDetectionResponse
+    # True if the result is not spam (clean), and false otherwise
+    attr_accessor :clean_result
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'input_string' => :'InputString'
+        :'clean_result' => :'CleanResult'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'input_string' => :'String'
+        :'clean_result' => :'BOOLEAN'
       }
     end
 
@@ -40,8 +40,8 @@ module CloudmersiveSpamDetectionApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'InputString')
-        self.input_string = attributes[:'InputString']
+      if attributes.has_key?(:'CleanResult')
+        self.clean_result = attributes[:'CleanResult']
       end
     end
 
@@ -63,7 +63,7 @@ module CloudmersiveSpamDetectionApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          input_string == o.input_string
+          clean_result == o.clean_result
     end
 
     # @see the `==` method
@@ -75,7 +75,7 @@ module CloudmersiveSpamDetectionApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_string].hash
+      [clean_result].hash
     end
 
     # Builds the object from hash

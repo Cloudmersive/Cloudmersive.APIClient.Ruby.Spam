@@ -1,5 +1,5 @@
 =begin
-#phishingapi
+#spamapi
 
 #Easily and directly scan and block phishing security threats.
 
@@ -13,13 +13,15 @@ Swagger Codegen version: 2.4.14
 require 'date'
 
 module CloudmersiveSpamDetectionApiClient
+  # Result of detecting spam using AI
   class SpamDetectionAdvancedResponse
+    # True if the result is not spam (clean), and false otherwise
     attr_accessor :clean_result
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'clean_result' => :'cleanResult'
+        :'clean_result' => :'CleanResult'
       }
     end
 
@@ -38,8 +40,8 @@ module CloudmersiveSpamDetectionApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cleanResult')
-        self.clean_result = attributes[:'cleanResult']
+      if attributes.has_key?(:'CleanResult')
+        self.clean_result = attributes[:'CleanResult']
       end
     end
 

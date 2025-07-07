@@ -1,5 +1,5 @@
 =begin
-#phishingapi
+#spamapi
 
 #Easily and directly scan and block phishing security threats.
 
@@ -19,16 +19,18 @@ module CloudmersiveSpamDetectionApiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
     # @param [Hash] opts the optional parameters
-    # @option opts [SpamDetectionAdvancedRequest] :body 
+    # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
     # @return [SpamDetectionAdvancedResponse]
     def spam_detect_text_string_advanced_post(opts = {})
       data, _status_code, _headers = spam_detect_text_string_advanced_post_with_http_info(opts)
       data
     end
 
+    # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
     # @param [Hash] opts the optional parameters
-    # @option opts [SpamDetectionAdvancedRequest] :body 
+    # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
     # @return [Array<(SpamDetectionAdvancedResponse, Fixnum, Hash)>] SpamDetectionAdvancedResponse data, response status code and response headers
     def spam_detect_text_string_advanced_post_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -62,6 +64,54 @@ module CloudmersiveSpamDetectionApiClient
         :return_type => 'SpamDetectionAdvancedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SpamDetectionApi#spam_detect_text_string_advanced_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+    # @param [Hash] opts the optional parameters
+    # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
+    # @return [SpamDetectionResponse]
+    def spam_detect_text_string_post(opts = {})
+      data, _status_code, _headers = spam_detect_text_string_post_with_http_info(opts)
+      data
+    end
+
+    # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+    # @param [Hash] opts the optional parameters
+    # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
+    # @return [Array<(SpamDetectionResponse, Fixnum, Hash)>] SpamDetectionResponse data, response status code and response headers
+    def spam_detect_text_string_post_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SpamDetectionApi.spam_detect_text_string_post ...'
+      end
+      # resource path
+      local_var_path = '/spam/detect/text-string'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain', 'application/json', 'text/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'text/json', 'application/*+json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'body'])
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpamDetectionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SpamDetectionApi#spam_detect_text_string_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

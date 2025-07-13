@@ -19,6 +19,7 @@ require 'cloudmersive-spam-detection-api-client/configuration'
 # Models
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_advanced_request'
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_advanced_response'
+require 'cloudmersive-spam-detection-api-client/models/spam_detection_request'
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_response'
 
 # APIs

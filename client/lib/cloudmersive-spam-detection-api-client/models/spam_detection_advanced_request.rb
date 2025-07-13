@@ -18,17 +18,37 @@ module CloudmersiveSpamDetectionApiClient
     # Input text string to detect spam against
     attr_accessor :input_string
 
+    # Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced.
+    attr_accessor :model
+
+    # True if unsolicited sales should be allowed, false otherwise
+    attr_accessor :allow_unsolicited_sales
+
+    # True if promotional content should be allowed, false otherwise
+    attr_accessor :allow_promotional_content
+
+    # True if phishing should be allowed, false otherwise
+    attr_accessor :allow_phishing
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'input_string' => :'InputString'
+        :'input_string' => :'InputString',
+        :'model' => :'Model',
+        :'allow_unsolicited_sales' => :'AllowUnsolicitedSales',
+        :'allow_promotional_content' => :'AllowPromotionalContent',
+        :'allow_phishing' => :'AllowPhishing'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'input_string' => :'String'
+        :'input_string' => :'String',
+        :'model' => :'String',
+        :'allow_unsolicited_sales' => :'BOOLEAN',
+        :'allow_promotional_content' => :'BOOLEAN',
+        :'allow_phishing' => :'BOOLEAN'
       }
     end
 
@@ -42,6 +62,22 @@ module CloudmersiveSpamDetectionApiClient
 
       if attributes.has_key?(:'InputString')
         self.input_string = attributes[:'InputString']
+      end
+
+      if attributes.has_key?(:'Model')
+        self.model = attributes[:'Model']
+      end
+
+      if attributes.has_key?(:'AllowUnsolicitedSales')
+        self.allow_unsolicited_sales = attributes[:'AllowUnsolicitedSales']
+      end
+
+      if attributes.has_key?(:'AllowPromotionalContent')
+        self.allow_promotional_content = attributes[:'AllowPromotionalContent']
+      end
+
+      if attributes.has_key?(:'AllowPhishing')
+        self.allow_phishing = attributes[:'AllowPhishing']
       end
     end
 
@@ -63,7 +99,11 @@ module CloudmersiveSpamDetectionApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          input_string == o.input_string
+          input_string == o.input_string &&
+          model == o.model &&
+          allow_unsolicited_sales == o.allow_unsolicited_sales &&
+          allow_promotional_content == o.allow_promotional_content &&
+          allow_phishing == o.allow_phishing
     end
 
     # @see the `==` method
@@ -75,7 +115,7 @@ module CloudmersiveSpamDetectionApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_string].hash
+      [input_string, model, allow_unsolicited_sales, allow_promotional_content, allow_phishing].hash
     end
 
     # Builds the object from hash

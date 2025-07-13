@@ -33,7 +33,7 @@ describe 'SpamDetectionApi' do
   end
 
   # unit tests for spam_detect_text_string_advanced_post
-  # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+  # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
   # @param [Hash] opts the optional parameters
   # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
   # @return [SpamDetectionAdvancedResponse]
@@ -44,9 +44,9 @@ describe 'SpamDetectionApi' do
   end
 
   # unit tests for spam_detect_text_string_post
-  # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+  # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
   # @param [Hash] opts the optional parameters
-  # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
+  # @option opts [SpamDetectionRequest] :body Spam detection request
   # @return [SpamDetectionResponse]
   describe 'spam_detect_text_string_post test' do
     it 'should work' do

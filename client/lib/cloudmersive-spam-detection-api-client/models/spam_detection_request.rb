@@ -13,42 +13,27 @@ Swagger Codegen version: 2.4.14
 require 'date'
 
 module CloudmersiveSpamDetectionApiClient
-  # Result of detecting spam using AI
-  class SpamDetectionAdvancedResponse
-    # True if the result is not spam (clean), and false otherwise
-    attr_accessor :clean_result
+  # AI spam detection request
+  class SpamDetectionRequest
+    # Input text string to detect spam against
+    attr_accessor :input_string
 
-    # True if the input text contains spam, false otherwise
-    attr_accessor :contains_spam
-
-    # True if the input text contains unsolicited sales, false otherwise
-    attr_accessor :contains_unsolicited_sales
-
-    # True if the input text contains promotional content, false otherwise
-    attr_accessor :contains_promotional_content
-
-    # True if the input text contains a phishing attempt, false otherwise
-    attr_accessor :contains_phishing_attempt
+    # Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced.
+    attr_accessor :model
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'clean_result' => :'CleanResult',
-        :'contains_spam' => :'ContainsSpam',
-        :'contains_unsolicited_sales' => :'ContainsUnsolicitedSales',
-        :'contains_promotional_content' => :'ContainsPromotionalContent',
-        :'contains_phishing_attempt' => :'ContainsPhishingAttempt'
+        :'input_string' => :'InputString',
+        :'model' => :'Model'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'clean_result' => :'BOOLEAN',
-        :'contains_spam' => :'BOOLEAN',
-        :'contains_unsolicited_sales' => :'BOOLEAN',
-        :'contains_promotional_content' => :'BOOLEAN',
-        :'contains_phishing_attempt' => :'BOOLEAN'
+        :'input_string' => :'String',
+        :'model' => :'String'
       }
     end
 
@@ -60,24 +45,12 @@ module CloudmersiveSpamDetectionApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'CleanResult')
-        self.clean_result = attributes[:'CleanResult']
+      if attributes.has_key?(:'InputString')
+        self.input_string = attributes[:'InputString']
       end
 
-      if attributes.has_key?(:'ContainsSpam')
-        self.contains_spam = attributes[:'ContainsSpam']
-      end
-
-      if attributes.has_key?(:'ContainsUnsolicitedSales')
-        self.contains_unsolicited_sales = attributes[:'ContainsUnsolicitedSales']
-      end
-
-      if attributes.has_key?(:'ContainsPromotionalContent')
-        self.contains_promotional_content = attributes[:'ContainsPromotionalContent']
-      end
-
-      if attributes.has_key?(:'ContainsPhishingAttempt')
-        self.contains_phishing_attempt = attributes[:'ContainsPhishingAttempt']
+      if attributes.has_key?(:'Model')
+        self.model = attributes[:'Model']
       end
     end
 
@@ -99,11 +72,8 @@ module CloudmersiveSpamDetectionApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          clean_result == o.clean_result &&
-          contains_spam == o.contains_spam &&
-          contains_unsolicited_sales == o.contains_unsolicited_sales &&
-          contains_promotional_content == o.contains_promotional_content &&
-          contains_phishing_attempt == o.contains_phishing_attempt
+          input_string == o.input_string &&
+          model == o.model
     end
 
     # @see the `==` method
@@ -115,7 +85,7 @@ module CloudmersiveSpamDetectionApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [clean_result, contains_spam, contains_unsolicited_sales, contains_promotional_content, contains_phishing_attempt].hash
+      [input_string, model].hash
     end
 
     # Builds the object from hash

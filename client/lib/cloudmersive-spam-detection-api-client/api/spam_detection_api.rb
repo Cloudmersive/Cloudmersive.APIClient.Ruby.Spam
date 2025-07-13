@@ -19,7 +19,7 @@ module CloudmersiveSpamDetectionApiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+    # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     # @param [Hash] opts the optional parameters
     # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
     # @return [SpamDetectionAdvancedResponse]
@@ -28,7 +28,7 @@ module CloudmersiveSpamDetectionApiClient
       data
     end
 
-    # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+    # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     # @param [Hash] opts the optional parameters
     # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
     # @return [Array<(SpamDetectionAdvancedResponse, Fixnum, Hash)>] SpamDetectionAdvancedResponse data, response status code and response headers
@@ -67,18 +67,18 @@ module CloudmersiveSpamDetectionApiClient
       end
       return data, status_code, headers
     end
-    # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+    # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
     # @param [Hash] opts the optional parameters
-    # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
+    # @option opts [SpamDetectionRequest] :body Spam detection request
     # @return [SpamDetectionResponse]
     def spam_detect_text_string_post(opts = {})
       data, _status_code, _headers = spam_detect_text_string_post_with_http_info(opts)
       data
     end
 
-    # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.
+    # Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
     # @param [Hash] opts the optional parameters
-    # @option opts [SpamDetectionAdvancedRequest] :body Spam detection request
+    # @option opts [SpamDetectionRequest] :body Spam detection request
     # @return [Array<(SpamDetectionResponse, Fixnum, Hash)>] SpamDetectionResponse data, response status code and response headers
     def spam_detect_text_string_post_with_http_info(opts = {})
       if @api_client.config.debugging

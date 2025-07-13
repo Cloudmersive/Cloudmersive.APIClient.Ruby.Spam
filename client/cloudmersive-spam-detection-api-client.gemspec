@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Cloudmersive"]
   s.email       = [""]
-  s.homepage    = "https://www.cloudmersive.com/spam-api"
+  s.homepage    = "https://cloudmersive.com/spam-detection-api"
   s.summary     = "Scan content for spam."
   s.description = "Spam Detection API lets you scan content for spam using AI."
   s.license     = 'Apache 2.0'

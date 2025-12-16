@@ -1,7 +1,7 @@
 =begin
 #spamapi
 
-#Easily and directly scan and block phishing security threats.
+#Easily and directly scan and block spam security threats in input.
 
 OpenAPI spec version: v1
 
@@ -18,6 +18,170 @@ module CloudmersiveSpamDetectionApiClient
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
+    end
+    # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :model Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (default to Advanced)
+    # @option opts [String] :preprocessing Optional: Specify which preprocessing to Use.  Possible choices are None, Compatability and Auto.  Default is Auto. (default to Auto)
+    # @option opts [BOOLEAN] :allow_phishing True if phishing should be allowed, false otherwise (default to false)
+    # @option opts [BOOLEAN] :allow_unsolicited_sales True if unsolicited sales should be allowed, false otherwise (default to false)
+    # @option opts [BOOLEAN] :allow_promotional_content True if promotional content should be allowed, false otherwise (default to true)
+    # @option opts [File] :input_file 
+    # @return [SpamDetectionAdvancedResponse]
+    def spam_detect_file_advanced_post(opts = {})
+      data, _status_code, _headers = spam_detect_file_advanced_post_with_http_info(opts)
+      data
+    end
+
+    # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :model Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced.
+    # @option opts [String] :preprocessing Optional: Specify which preprocessing to Use.  Possible choices are None, Compatability and Auto.  Default is Auto.
+    # @option opts [BOOLEAN] :allow_phishing True if phishing should be allowed, false otherwise
+    # @option opts [BOOLEAN] :allow_unsolicited_sales True if unsolicited sales should be allowed, false otherwise
+    # @option opts [BOOLEAN] :allow_promotional_content True if promotional content should be allowed, false otherwise
+    # @option opts [File] :input_file 
+    # @return [Array<(SpamDetectionAdvancedResponse, Fixnum, Hash)>] SpamDetectionAdvancedResponse data, response status code and response headers
+    def spam_detect_file_advanced_post_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SpamDetectionApi.spam_detect_file_advanced_post ...'
+      end
+      # resource path
+      local_var_path = '/spam/detect/file/advanced'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain', 'application/json', 'text/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'model'] = opts[:'model'] if !opts[:'model'].nil?
+      header_params[:'preprocessing'] = opts[:'preprocessing'] if !opts[:'preprocessing'].nil?
+      header_params[:'allowPhishing'] = opts[:'allow_phishing'] if !opts[:'allow_phishing'].nil?
+      header_params[:'allowUnsolicitedSales'] = opts[:'allow_unsolicited_sales'] if !opts[:'allow_unsolicited_sales'].nil?
+      header_params[:'allowPromotionalContent'] = opts[:'allow_promotional_content'] if !opts[:'allow_promotional_content'].nil?
+
+      # form parameters
+      form_params = {}
+      form_params['inputFile'] = opts[:'input_file'] if !opts[:'input_file'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpamDetectionAdvancedResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SpamDetectionApi#spam_detect_file_advanced_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :model Model to use; default setting is Advanced (default to Advanced)
+    # @option opts [File] :input_file 
+    # @return [SpamDetectionResponse]
+    def spam_detect_file_post(opts = {})
+      data, _status_code, _headers = spam_detect_file_post_with_http_info(opts)
+      data
+    end
+
+    # Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :model Model to use; default setting is Advanced
+    # @option opts [File] :input_file 
+    # @return [Array<(SpamDetectionResponse, Fixnum, Hash)>] SpamDetectionResponse data, response status code and response headers
+    def spam_detect_file_post_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SpamDetectionApi.spam_detect_file_post ...'
+      end
+      # resource path
+      local_var_path = '/spam/detect/file'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain', 'application/json', 'text/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'model'] = opts[:'model'] if !opts[:'model'].nil?
+
+      # form parameters
+      form_params = {}
+      form_params['inputFile'] = opts[:'input_file'] if !opts[:'input_file'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpamDetectionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SpamDetectionApi#spam_detect_file_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    # @param [Hash] opts the optional parameters
+    # @option opts [SpamDetectionAdvancedFormSubmissionRequest] :body Spam detection request
+    # @return [SpamDetectionFormSubmissionAdvancedResponse]
+    def spam_detect_form_submission_advanced_post(opts = {})
+      data, _status_code, _headers = spam_detect_form_submission_advanced_post_with_http_info(opts)
+      data
+    end
+
+    # Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    # @param [Hash] opts the optional parameters
+    # @option opts [SpamDetectionAdvancedFormSubmissionRequest] :body Spam detection request
+    # @return [Array<(SpamDetectionFormSubmissionAdvancedResponse, Fixnum, Hash)>] SpamDetectionFormSubmissionAdvancedResponse data, response status code and response headers
+    def spam_detect_form_submission_advanced_post_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SpamDetectionApi.spam_detect_form_submission_advanced_post ...'
+      end
+      # resource path
+      local_var_path = '/spam/detect/form-submission/advanced'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain', 'application/json', 'text/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'text/json', 'application/*+json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'body'])
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpamDetectionFormSubmissionAdvancedResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SpamDetectionApi#spam_detect_form_submission_advanced_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
     end
     # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     # @param [Hash] opts the optional parameters

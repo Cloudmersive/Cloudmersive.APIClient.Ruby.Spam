@@ -1,7 +1,7 @@
 =begin
 #spamapi
 
-#Easily and directly scan and block phishing security threats.
+#Easily and directly scan and block spam security threats in input.
 
 OpenAPI spec version: v1
 
@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.14
 =end
 
 module CloudmersiveSpamDetectionApiClient
-  VERSION = '2.3.0'
+  VERSION = '2.4.0'
 end

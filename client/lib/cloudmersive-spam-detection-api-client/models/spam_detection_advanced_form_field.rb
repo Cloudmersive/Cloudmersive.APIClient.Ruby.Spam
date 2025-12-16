@@ -13,52 +13,27 @@ Swagger Codegen version: 2.4.14
 require 'date'
 
 module CloudmersiveSpamDetectionApiClient
-  # Result of detecting spam using AI
-  class SpamDetectionAdvancedResponse
-    # True if the result is not spam (clean), and false otherwise
-    attr_accessor :clean_result
+  # Form field submitted to run spam detection on
+  class SpamDetectionAdvancedFormField
+    # Title of the field
+    attr_accessor :field_title
 
-    # Overall spam risk level between 0.0 and 1.0
-    attr_accessor :spam_risk_level
-
-    # True if the input text contains spam, false otherwise
-    attr_accessor :contains_spam
-
-    # True if the input text contains unsolicited sales, false otherwise
-    attr_accessor :contains_unsolicited_sales
-
-    # True if the input text contains promotional content, false otherwise
-    attr_accessor :contains_promotional_content
-
-    # True if the input text contains a phishing attempt, false otherwise
-    attr_accessor :contains_phishing_attempt
-
-    # Rationale for why the conclusion was formed
-    attr_accessor :analysis_rationale
+    # Value of the field
+    attr_accessor :field_value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'clean_result' => :'CleanResult',
-        :'spam_risk_level' => :'SpamRiskLevel',
-        :'contains_spam' => :'ContainsSpam',
-        :'contains_unsolicited_sales' => :'ContainsUnsolicitedSales',
-        :'contains_promotional_content' => :'ContainsPromotionalContent',
-        :'contains_phishing_attempt' => :'ContainsPhishingAttempt',
-        :'analysis_rationale' => :'AnalysisRationale'
+        :'field_title' => :'FieldTitle',
+        :'field_value' => :'FieldValue'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'clean_result' => :'BOOLEAN',
-        :'spam_risk_level' => :'Float',
-        :'contains_spam' => :'BOOLEAN',
-        :'contains_unsolicited_sales' => :'BOOLEAN',
-        :'contains_promotional_content' => :'BOOLEAN',
-        :'contains_phishing_attempt' => :'BOOLEAN',
-        :'analysis_rationale' => :'String'
+        :'field_title' => :'String',
+        :'field_value' => :'String'
       }
     end
 
@@ -70,32 +45,12 @@ module CloudmersiveSpamDetectionApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'CleanResult')
-        self.clean_result = attributes[:'CleanResult']
+      if attributes.has_key?(:'FieldTitle')
+        self.field_title = attributes[:'FieldTitle']
       end
 
-      if attributes.has_key?(:'SpamRiskLevel')
-        self.spam_risk_level = attributes[:'SpamRiskLevel']
-      end
-
-      if attributes.has_key?(:'ContainsSpam')
-        self.contains_spam = attributes[:'ContainsSpam']
-      end
-
-      if attributes.has_key?(:'ContainsUnsolicitedSales')
-        self.contains_unsolicited_sales = attributes[:'ContainsUnsolicitedSales']
-      end
-
-      if attributes.has_key?(:'ContainsPromotionalContent')
-        self.contains_promotional_content = attributes[:'ContainsPromotionalContent']
-      end
-
-      if attributes.has_key?(:'ContainsPhishingAttempt')
-        self.contains_phishing_attempt = attributes[:'ContainsPhishingAttempt']
-      end
-
-      if attributes.has_key?(:'AnalysisRationale')
-        self.analysis_rationale = attributes[:'AnalysisRationale']
+      if attributes.has_key?(:'FieldValue')
+        self.field_value = attributes[:'FieldValue']
       end
     end
 
@@ -117,13 +72,8 @@ module CloudmersiveSpamDetectionApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          clean_result == o.clean_result &&
-          spam_risk_level == o.spam_risk_level &&
-          contains_spam == o.contains_spam &&
-          contains_unsolicited_sales == o.contains_unsolicited_sales &&
-          contains_promotional_content == o.contains_promotional_content &&
-          contains_phishing_attempt == o.contains_phishing_attempt &&
-          analysis_rationale == o.analysis_rationale
+          field_title == o.field_title &&
+          field_value == o.field_value
     end
 
     # @see the `==` method
@@ -135,7 +85,7 @@ module CloudmersiveSpamDetectionApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [clean_result, spam_risk_level, contains_spam, contains_unsolicited_sales, contains_promotional_content, contains_phishing_attempt, analysis_rationale].hash
+      [field_title, field_value].hash
     end
 
     # Builds the object from hash

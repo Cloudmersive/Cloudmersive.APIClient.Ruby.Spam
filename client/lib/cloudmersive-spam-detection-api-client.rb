@@ -1,7 +1,7 @@
 =begin
 #spamapi
 
-#Easily and directly scan and block phishing security threats.
+#Easily and directly scan and block spam security threats in input.
 
 OpenAPI spec version: v1
 
@@ -17,8 +17,11 @@ require 'cloudmersive-spam-detection-api-client/version'
 require 'cloudmersive-spam-detection-api-client/configuration'
 
 # Models
+require 'cloudmersive-spam-detection-api-client/models/spam_detection_advanced_form_field'
+require 'cloudmersive-spam-detection-api-client/models/spam_detection_advanced_form_submission_request'
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_advanced_request'
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_advanced_response'
+require 'cloudmersive-spam-detection-api-client/models/spam_detection_form_submission_advanced_response'
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_request'
 require 'cloudmersive-spam-detection-api-client/models/spam_detection_response'
 

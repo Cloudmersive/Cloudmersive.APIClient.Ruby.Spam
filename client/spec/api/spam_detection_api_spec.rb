@@ -1,7 +1,7 @@
 =begin
 #spamapi
 
-#Easily and directly scan and block phishing security threats.
+#Easily and directly scan and block spam security threats in input.
 
 OpenAPI spec version: v1
 
@@ -29,6 +29,45 @@ describe 'SpamDetectionApi' do
   describe 'test an instance of SpamDetectionApi' do
     it 'should create an instance of SpamDetectionApi' do
       expect(@instance).to be_instance_of(CloudmersiveSpamDetectionApiClient::SpamDetectionApi)
+    end
+  end
+
+  # unit tests for spam_detect_file_advanced_post
+  # Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :model Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced.
+  # @option opts [String] :preprocessing Optional: Specify which preprocessing to Use.  Possible choices are None, Compatability and Auto.  Default is Auto.
+  # @option opts [BOOLEAN] :allow_phishing True if phishing should be allowed, false otherwise
+  # @option opts [BOOLEAN] :allow_unsolicited_sales True if unsolicited sales should be allowed, false otherwise
+  # @option opts [BOOLEAN] :allow_promotional_content True if promotional content should be allowed, false otherwise
+  # @option opts [File] :input_file 
+  # @return [SpamDetectionAdvancedResponse]
+  describe 'spam_detect_file_advanced_post test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for spam_detect_file_post
+  # Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :model Model to use; default setting is Advanced
+  # @option opts [File] :input_file 
+  # @return [SpamDetectionResponse]
+  describe 'spam_detect_file_post test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for spam_detect_form_submission_advanced_post
+  # Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+  # @param [Hash] opts the optional parameters
+  # @option opts [SpamDetectionAdvancedFormSubmissionRequest] :body Spam detection request
+  # @return [SpamDetectionFormSubmissionAdvancedResponse]
+  describe 'spam_detect_form_submission_advanced_post test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 

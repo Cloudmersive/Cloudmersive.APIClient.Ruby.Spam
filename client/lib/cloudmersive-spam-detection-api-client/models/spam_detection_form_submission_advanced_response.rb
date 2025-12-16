@@ -14,7 +14,7 @@ require 'date'
 
 module CloudmersiveSpamDetectionApiClient
   # Result of detecting spam using AI
-  class SpamDetectionAdvancedResponse
+  class SpamDetectionFormSubmissionAdvancedResponse
     # True if the result is not spam (clean), and false otherwise
     attr_accessor :clean_result
 

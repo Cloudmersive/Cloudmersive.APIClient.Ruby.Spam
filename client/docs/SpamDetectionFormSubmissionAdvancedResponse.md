@@ -1,4 +1,4 @@
-# CloudmersiveSpamDetectionApiClient::SpamDetectionAdvancedResponse
+# CloudmersiveSpamDetectionApiClient::SpamDetectionFormSubmissionAdvancedResponse
 
 ## Properties
 Name | Type | Description | Notes

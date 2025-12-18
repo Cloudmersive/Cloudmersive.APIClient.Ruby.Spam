@@ -30,6 +30,9 @@ module CloudmersiveSpamDetectionApiClient
     # True if phishing should be allowed, false otherwise
     attr_accessor :allow_phishing
 
+    # Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud
+    attr_accessor :custom_policy_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -37,7 +40,8 @@ module CloudmersiveSpamDetectionApiClient
         :'model' => :'Model',
         :'allow_unsolicited_sales' => :'AllowUnsolicitedSales',
         :'allow_promotional_content' => :'AllowPromotionalContent',
-        :'allow_phishing' => :'AllowPhishing'
+        :'allow_phishing' => :'AllowPhishing',
+        :'custom_policy_id' => :'CustomPolicyID'
       }
     end
 
@@ -48,7 +52,8 @@ module CloudmersiveSpamDetectionApiClient
         :'model' => :'String',
         :'allow_unsolicited_sales' => :'BOOLEAN',
         :'allow_promotional_content' => :'BOOLEAN',
-        :'allow_phishing' => :'BOOLEAN'
+        :'allow_phishing' => :'BOOLEAN',
+        :'custom_policy_id' => :'String'
       }
     end
 
@@ -79,6 +84,10 @@ module CloudmersiveSpamDetectionApiClient
       if attributes.has_key?(:'AllowPhishing')
         self.allow_phishing = attributes[:'AllowPhishing']
       end
+
+      if attributes.has_key?(:'CustomPolicyID')
+        self.custom_policy_id = attributes[:'CustomPolicyID']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -103,7 +112,8 @@ module CloudmersiveSpamDetectionApiClient
           model == o.model &&
           allow_unsolicited_sales == o.allow_unsolicited_sales &&
           allow_promotional_content == o.allow_promotional_content &&
-          allow_phishing == o.allow_phishing
+          allow_phishing == o.allow_phishing &&
+          custom_policy_id == o.custom_policy_id
     end
 
     # @see the `==` method
@@ -115,7 +125,7 @@ module CloudmersiveSpamDetectionApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_string, model, allow_unsolicited_sales, allow_promotional_content, allow_phishing].hash
+      [input_string, model, allow_unsolicited_sales, allow_promotional_content, allow_phishing, custom_policy_id].hash
     end
 
     # Builds the object from hash

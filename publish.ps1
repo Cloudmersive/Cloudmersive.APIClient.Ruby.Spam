@@ -1,1 +1,1 @@
-& gem push .\client\cloudmersive-spam-detection-api-client-2.4.0.gem
+& gem push .\client\cloudmersive-spam-detection-api-client-2.4.1.gem

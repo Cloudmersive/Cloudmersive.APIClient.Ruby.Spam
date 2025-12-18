@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **allow_unsolicited_sales** | **BOOLEAN** | True if unsolicited sales should be allowed, false otherwise | [optional] 
 **allow_promotional_content** | **BOOLEAN** | True if promotional content should be allowed, false otherwise | [optional] 
 **allow_phishing** | **BOOLEAN** | True if phishing should be allowed, false otherwise | [optional] 
+**custom_policy_id** | **String** | Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud | [optional] 
 
 

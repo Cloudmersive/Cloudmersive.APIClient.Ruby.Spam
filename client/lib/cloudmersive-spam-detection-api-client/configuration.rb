@@ -129,7 +129,7 @@ module CloudmersiveSpamDetectionApiClient
 
     def initialize
       @scheme = 'https'
-      @host = ''
+      @host = 'api.cloudmersive.com'
       @base_path = ''
       @api_key = {}
       @api_key_prefix = {}

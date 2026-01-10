@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.14
 =end
 
 module CloudmersiveSpamDetectionApiClient
-  VERSION = '2.4.1'
+  VERSION = '2.4.2'
 end
